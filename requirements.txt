@@ -3,3 +3,4 @@ pandas
 requests
 flask
 uuid
+web3
