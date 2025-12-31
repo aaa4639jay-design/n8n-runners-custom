@@ -8,7 +8,7 @@ on:
       n8n_version:
         description: "n8n version"
         required: false
-        default: "1.51.0"
+        default: "latest"
 
 env:
   REGISTRY: ghcr.io
@@ -59,7 +59,7 @@ jobs:
           context: .
           push: true
           build-args: |
-            N8N_VERSION=${{ inputs.n8n_version || '1.51.0' }}
+            N8N_VERSION=${{ inputs.n8n_version || 'latest' }}
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.sha.outputs.short }}

@@ -1,4 +1,5 @@
-FROM n8nio/runners:latest
+ARG N8N_VERSION=latest
+FROM n8nio/n8n:${N8N_VERSION}
 USER root
 COPY requirements.txt /requirements.txt
 RUN cd /opt/runners/task-runner-javascript && pnpm add moment uuid
