@@ -4,3 +4,4 @@ requests
 flask
 uuid
 web3
+PyJWT
