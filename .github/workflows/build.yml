@@ -2,7 +2,7 @@ name: Build n8n Custom Runner Image
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
     inputs:
       n8n_version:
