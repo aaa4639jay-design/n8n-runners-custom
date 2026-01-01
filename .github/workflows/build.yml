@@ -9,6 +9,10 @@ on:
         description: "n8n version"
         required: false
         default: "latest"
+      tag_name:
+        description: "tag name"
+        required: false
+        default: "latest"
 
 env:
   REGISTRY: ghcr.io
@@ -61,7 +65,7 @@ jobs:
           build-args: |
             N8N_VERSION=${{ inputs.n8n_version || 'latest' }}
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ inputs.tag_name || 'latest' }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.sha.outputs.short }}
 
       - name: ✅Output result
